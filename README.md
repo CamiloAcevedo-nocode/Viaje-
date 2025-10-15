@@ -16,13 +16,18 @@ Este repositorio contiene una página estática en HTML/CSS para mostrar un resu
 
 Como es un sitio estático, puedes publicarlo gratis en múltiples plataformas. Aquí tienes tres alternativas populares:
 
+> ⚠️ **GitHub Pages es sensible a mayúsculas/minúsculas.** Si tu repositorio se llama `Viaje-`, la URL final será `https://tu-usuario.github.io/Viaje-/`. Debe coincidir exactamente con el nombre del repo; de lo contrario, verás un 404.
+
 ### 1. GitHub Pages (desde la rama principal)
-1. Crea un repositorio en GitHub y sube los archivos (`index.html`, `README.md`, etc.).
+1. Crea un repositorio en GitHub y sube los archivos (`index.html`, `docs/index.html`, `README.md`, etc.).
 2. Entra a **Settings → Pages**.
 3. En **Build and deployment**, elige *Deploy from a branch*.
-4. Selecciona la rama `main` (o `master`) y la carpeta raíz (`/`).
-5. Guarda los cambios. En unos minutos GitHub generará una URL del tipo `https://tu-usuario.github.io/nombre-del-repo/`.
-6. Asegúrate de que el archivo principal se llame exactamente `index.html` (en minúsculas); de lo contrario, verás un error 404.
+4. Selecciona la rama `main` (o `master`).
+5. En **Folder** tienes dos alternativas válidas:
+   - `/(root)` si quieres servir la versión que está en la raíz del repo.
+   - `/docs` si prefieres dejar la raíz limpia y que Pages tome la copia dentro de `docs/`.
+6. Guarda los cambios. En unos minutos GitHub generará una URL del tipo `https://tu-usuario.github.io/nombre-del-repo/`.
+7. Asegúrate de que el archivo principal se llame exactamente `index.html` (en minúsculas); de lo contrario, verás un error 404.
 
 ### 2. Netlify (arrastrar y soltar)
 1. Crea una cuenta en <https://www.netlify.com/>.
@@ -42,8 +47,10 @@ Tanto GitHub Pages, Netlify como Vercel permiten añadir un dominio personalizad
 ## Estructura del proyecto
 ```
 Viaje-
-├── index.html   # Página principal con el tablero de vuelos (debe escribirse en minúsculas para GitHub Pages)
-└── README.md    # Guía del proyecto y pasos de despliegue
+├── index.html         # Página principal con el tablero de vuelos (debe escribirse en minúsculas para GitHub Pages)
+├── docs/
+│   └── index.html     # Copia lista para usar si configuras GitHub Pages con la carpeta /docs
+└── README.md          # Guía del proyecto y pasos de despliegue
 ```
 
 ¡Listo! Con cualquiera de estas opciones podrás compartir el dashboard en la web en pocos minutos.
