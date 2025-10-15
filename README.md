@@ -1,27 +1,28 @@
 # Dashboard de vuelos SCL → BKK
 
-Este repositorio contiene una página estática en HTML/CSS para mostrar un resumen visual de itinerarios entre Santiago de Chile (SCL) y Bangkok (BKK) durante Semana Santa 2026. El archivo principal es [`Index.html`](Index.html), que puedes abrir directamente en un navegador.
+Este repositorio contiene una página estática en HTML/CSS para mostrar un resumen visual de itinerarios entre Santiago de Chile (SCL) y Bangkok (BKK) durante Semana Santa 2026. El archivo principal es [`index.html`](index.html), que puedes abrir directamente en un navegador.
 
 ## Visualización local rápida
 
 1. Clona o descarga este repositorio.
-2. Abre `Index.html` haciendo doble clic o arrástralo a tu navegador.
+2. Abre `index.html` haciendo doble clic o arrástralo a tu navegador.
 3. Para simular un despliegue real, también puedes levantar un servidor local:
    ```bash
    python3 -m http.server 8000
    ```
-   Luego visita <http://localhost:8000/Index.html>.
+   Luego visita <http://localhost:8000/index.html>.
 
 ## Opciones de despliegue en la web
 
 Como es un sitio estático, puedes publicarlo gratis en múltiples plataformas. Aquí tienes tres alternativas populares:
 
 ### 1. GitHub Pages (desde la rama principal)
-1. Crea un repositorio en GitHub y sube los archivos (`Index.html`, `README.md`, etc.).
+1. Crea un repositorio en GitHub y sube los archivos (`index.html`, `README.md`, etc.).
 2. Entra a **Settings → Pages**.
 3. En **Build and deployment**, elige *Deploy from a branch*.
 4. Selecciona la rama `main` (o `master`) y la carpeta raíz (`/`).
-5. Guarda los cambios. En unos minutos GitHub generará una URL del tipo `https://tu-usuario.github.io/nombre-del-repo/Index.html`.
+5. Guarda los cambios. En unos minutos GitHub generará una URL del tipo `https://tu-usuario.github.io/nombre-del-repo/`.
+6. Asegúrate de que el archivo principal se llame exactamente `index.html` (en minúsculas); de lo contrario, verás un error 404.
 
 ### 2. Netlify (arrastrar y soltar)
 1. Crea una cuenta en <https://www.netlify.com/>.
@@ -41,7 +42,7 @@ Tanto GitHub Pages, Netlify como Vercel permiten añadir un dominio personalizad
 ## Estructura del proyecto
 ```
 Viaje-
-├── Index.html   # Página principal con el tablero de vuelos
+├── index.html   # Página principal con el tablero de vuelos (debe escribirse en minúsculas para GitHub Pages)
 └── README.md    # Guía del proyecto y pasos de despliegue
 ```
 
