@@ -15,6 +15,7 @@
     *{box-sizing:border-box}
     html,body{margin:0; height:100%; background:linear-gradient(180deg,#0b0f16 0%,#0e1623 100%); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif}
     a{color:inherit}
+    a:focus-visible{outline:3px solid rgba(34,211,238,.6); outline-offset:3px; border-radius:10px}
     header{
       position:relative; overflow:hidden; isolation:isolate; background:radial-gradient(1200px 500px at 10% -10%, rgba(34,211,238,.15), transparent 60%), radial-gradient(900px 400px at 90% 0%, rgba(245,158,11,.12), transparent 60%);
       border-bottom:1px solid #1f2937; padding: clamp(24px, 6vw, 64px) 24px;
@@ -24,6 +25,7 @@
     h1{font-size:clamp(28px,5vw,46px); margin:.25rem 0 .75rem; line-height:1.1}
     .sub{color:var(--muted); font-size:clamp(14px,2.3vw,18px)}
     .chip{display:inline-flex; gap:.5rem; align-items:center; padding:.45rem .7rem; border:1px solid #1f2937; background:#0b1220; border-radius:999px; font-size:13px; color:#cbd5e1}
+    .chip:focus-visible{outline:2px solid rgba(34,211,238,.4); outline-offset:2px}
     .chips{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
 
     .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); padding:28px 24px}
@@ -44,6 +46,9 @@
     .btn{appearance:none; border:0; cursor:pointer; padding:.7rem .9rem; border-radius:12px; font-weight:700}
     .btn.primary{background:linear-gradient(135deg,#22d3ee 0%,#0891b2 100%); color:#03202a}
     .btn.ghost{background:transparent; color:#93c5fd; border:1px solid #1f2937}
+    .btn:focus-visible{outline:3px solid rgba(103,232,249,.65); outline-offset:3px}
+    .btn{transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(8,145,178,.25)}
     .tag{position:absolute; top:12px; right:12px; font-size:11px; padding:.35rem .5rem; border-radius:999px; border:1px solid #1f2937}
     .tag.best{background:rgba(34,211,238,.12); color:#67e8f9}
     .tag.fast{background:rgba(52,211,153,.12); color:#86efac}
@@ -55,6 +60,10 @@
     @media (min-width: 820px){ .kpis{grid-template-columns:repeat(4,1fr)} }
     .kpi{background:var(--panel); border:1px solid #1f2937; border-radius:14px; padding:14px}
     .kpi b{display:block; font-size:22px}
+    .insights{background:var(--panel); border:1px solid #1f2937; border-radius:16px; margin:0 24px 32px; padding:22px; color:#cbd5e1}
+    .insights h2{margin:0 0 12px; font-size:18px}
+    .insights ul{margin:0; padding-left:18px; color:#94a3b8; font-size:14px; line-height:1.6}
+    .insights li+li{margin-top:.6rem}
   </style>
 </head>
 <body>
@@ -193,6 +202,16 @@
           </div>
         </div>
       </article>
+    </section>
+
+    <section class="insights" aria-label="Consejos para elegir">
+      <h2>Consejos rápidos para elegir tu vuelo</h2>
+      <ul>
+        <li>Si priorizas descanso, privilegia itinerarios con una sola escala: Air France ofrece la conexión más sencilla vía París.</li>
+        <li>Busca combinaciones mixtas LATAM + Qatar para equilibrar millaje, precio y tiempos de conexión en Doha.</li>
+        <li>Verifica la política de equipaje: las opciones más baratas suelen exigir compras adicionales para maletas facturadas.</li>
+        <li>Considera dormir en tránsito en Madrid o Doha; ambos aeropuertos cuentan con salas VIP abiertas 24/7 para pasajeros en conexión.</li>
+      </ul>
     </section>
 
     <p class="note">* Los valores y horarios son referenciales y pueden variar según disponibilidad. Fechas base: 22 de marzo → 12 de abril de 2026. Aeropuertos: SCL (Santiago) y BKK (Bangkok‑Suvarnabhumi). Clase económica.</p>
