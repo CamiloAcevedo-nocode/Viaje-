@@ -1,0 +1,284 @@
+{
+  "pillars": [
+    {
+      "id": "nutricion",
+      "title": "Nutrición general",
+      "description": "Hábitos simples para alimentarte mejor y apoyar tu recuperación.",
+      "image": "assets/pillar-nutricion.svg",
+      "topics": [
+        {
+          "id": "nutricion-plan",
+          "title": "Plan de alimentación diario",
+          "summary": "Organiza tus comidas para mantener energía y estabilidad.",
+          "image": "assets/topic-checklist.svg",
+          "text": "Planificar tus comidas ayuda a evitar ayunos prolongados y mejora la recuperación. Prioriza porciones equilibradas con verduras, proteína y cereales integrales. Evita saltarte tiempos de comida y mantén hidratación constante.",
+          "checklist": [
+            "Incluye 3 comidas principales y 1 a 2 colaciones saludables",
+            "Prioriza verduras, frutas frescas y proteínas magras",
+            "Limita azúcares simples y bebidas con alcohol"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Plato saludable en 5 minutos",
+              "url": "https://www.youtube.com/watch?v=Gmh_xMMJ2Pw"
+            },
+            {
+              "type": "link",
+              "title": "Guía de porciones saludables",
+              "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+            }
+          ]
+        },
+        {
+          "id": "nutricion-hidratacion",
+          "title": "Hidratación y señales de alerta",
+          "summary": "Identifica cuánta agua necesitas y cuándo consultar.",
+          "image": "assets/topic-edu.svg",
+          "text": "Mantenerte hidratado favorece la circulación, la energía y la recuperación. Observa el color de tu orina y evita esperar a tener sed. En días calurosos o con actividad física aumenta el consumo de agua.",
+          "checklist": [
+            "Toma agua durante el día, en pequeñas cantidades frecuentes",
+            "Reduce bebidas azucaradas o con cafeína en exceso",
+            "Consulta si hay mareos frecuentes o sequedad extrema"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Tips para hidratarte mejor",
+              "url": "https://www.youtube.com/watch?v=9iMGFqMmUFs"
+            },
+            {
+              "type": "link",
+              "title": "Recomendaciones de hidratación",
+              "url": "https://www.unicef.org/parenting/health/importance-hydration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aps",
+      "title": "Uso correcto de la red APS",
+      "description": "Aprende cuándo consultar, cómo reforzar tus controles y usar tu CESFAM.",
+      "image": "assets/pillar-aps.svg",
+      "topics": [
+        {
+          "id": "aps-controles",
+          "title": "Controles y seguimiento",
+          "summary": "Cómo organizar tus controles y no perder continuidad.",
+          "image": "assets/topic-checklist.svg",
+          "text": "Tu control en APS ayuda a prevenir complicaciones y ajustar tratamientos a tiempo. Agenda tus próximas visitas antes del alta y registra síntomas o dudas para tu equipo de salud.",
+          "checklist": [
+            "Agenda tu control antes del alta si es posible",
+            "Lleva tu lista de medicamentos y exámenes recientes",
+            "Anota síntomas o dudas antes de ir"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Cómo prepararte para un control",
+              "url": "https://www.youtube.com/watch?v=J0YbF7xW9Zg"
+            },
+            {
+              "type": "link",
+              "title": "Guía breve APS",
+              "url": "https://www.minsal.cl"
+            }
+          ]
+        },
+        {
+          "id": "aps-urgencias",
+          "title": "Cuándo acudir a urgencias",
+          "summary": "Identifica señales de alarma y actúa a tiempo.",
+          "image": "assets/topic-video.svg",
+          "text": "Algunos síntomas requieren atención inmediata: dolor intenso, dificultad para respirar o sangrado abundante. Si aparecen, no esperes y acude a urgencias. Para dudas menores, consulta con tu CESFAM o línea de salud.",
+          "checklist": [
+            "Dificultad para respirar o dolor de pecho",
+            "Fiebre alta persistente o vómitos continuos",
+            "Sangrado abundante o desmayos"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Señales de alarma",
+              "url": "https://www.youtube.com/watch?v=qGClHkNn9gQ"
+            },
+            {
+              "type": "link",
+              "title": "Señales de alerta en casa",
+              "url": "https://www.who.int/emergencies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diabetes",
+      "title": "Diabetes e Insulina",
+      "description": "Guías claras para monitoreo, alimentación y uso seguro de insulina.",
+      "image": "assets/pillar-diabetes.svg",
+      "topics": [
+        {
+          "id": "diabetes-monitoreo",
+          "title": "Monitoreo de glicemia",
+          "summary": "Cómo medir, registrar y entender tus resultados.",
+          "image": "assets/topic-edu.svg",
+          "text": "Medir tu glicemia te ayuda a ajustar alimentación y medicamentos. Registra tus resultados en horarios fijos y comparte los datos con tu equipo de salud para un mejor seguimiento.",
+          "checklist": [
+            "Mide glicemia antes de comidas y según indicación médica",
+            "Registra fecha, hora y valor en una libreta o app",
+            "Consulta si los valores se mantienen fuera de rango"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Cómo medir glicemia",
+              "url": "https://www.youtube.com/watch?v=8RUpf5UQ1ms"
+            },
+            {
+              "type": "link",
+              "title": "Guía básica de diabetes",
+              "url": "https://www.diabetes.org/diabetes"
+            }
+          ]
+        },
+        {
+          "id": "diabetes-insulina",
+          "title": "Uso seguro de insulina",
+          "summary": "Técnicas de aplicación y conservación correcta.",
+          "image": "assets/topic-checklist.svg",
+          "text": "La insulina debe almacenarse en frío y aplicarse con técnica adecuada. Revisa siempre la fecha de vencimiento y rota los sitios de inyección para evitar molestias o lesiones en la piel.",
+          "checklist": [
+            "Mantén la insulina refrigerada entre 2°C y 8°C",
+            "Lávate las manos antes de cada aplicación",
+            "Rota abdomen, brazos y muslos"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Técnica de aplicación de insulina",
+              "url": "https://www.youtube.com/watch?v=2L9qgF7I1uU"
+            },
+            {
+              "type": "link",
+              "title": "Cuidados con la insulina",
+              "url": "https://www.cdc.gov/diabetes/managing/medications.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anticoagulantes",
+      "title": "Anticoagulantes",
+      "description": "Información clave para un uso seguro y seguimiento correcto.",
+      "image": "assets/pillar-anticoagulantes.svg",
+      "topics": [
+        {
+          "id": "anticoagulantes-seguridad",
+          "title": "Seguridad en el uso",
+          "summary": "Cómo tomar anticoagulantes sin riesgos.",
+          "image": "assets/topic-edu.svg",
+          "text": "Los anticoagulantes ayudan a prevenir coágulos, pero requieren controles y vigilancia. Evita automedicarte y consulta ante hematomas frecuentes o sangrados.",
+          "checklist": [
+            "Respeta dosis y horarios indicados",
+            "Informa a tu equipo si tomas otros medicamentos",
+            "Consulta si aparecen moretones o sangrados"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Uso seguro de anticoagulantes",
+              "url": "https://www.youtube.com/watch?v=F1C5bJb5hQ4"
+            },
+            {
+              "type": "link",
+              "title": "Recomendaciones generales",
+              "url": "https://www.heart.org/en/health-topics/atrial-fibrillation/what-is-atrial-fibrillation-afib"
+            }
+          ]
+        },
+        {
+          "id": "anticoagulantes-controles",
+          "title": "Controles y exámenes",
+          "summary": "Qué exámenes pedir y cuándo hacerlo.",
+          "image": "assets/topic-video.svg",
+          "text": "Algunos anticoagulantes requieren exámenes periódicos (como INR). Mantén una agenda clara y lleva tus resultados en cada control para ajustar dosis con seguridad.",
+          "checklist": [
+            "Agenda controles según indicación médica",
+            "Lleva tus resultados de laboratorio",
+            "Pregunta por signos de alerta específicos"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Control de INR",
+              "url": "https://www.youtube.com/watch?v=Y25n3K5rF00"
+            },
+            {
+              "type": "link",
+              "title": "Guía para pacientes anticoagulados",
+              "url": "https://www.mayoclinic.org/tests-procedures/prothrombin-time/about/pac-20384661"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caidas",
+      "title": "Prevención de caídas",
+      "description": "Acciones simples para evitar caídas en casa y al caminar.",
+      "image": "assets/pillar-caidas.svg",
+      "topics": [
+        {
+          "id": "caidas-hogar",
+          "title": "Seguridad en el hogar",
+          "summary": "Adapta tu espacio para evitar accidentes.",
+          "image": "assets/topic-checklist.svg",
+          "text": "Retira obstáculos en pasillos, mejora la iluminación y utiliza calzado seguro. Si es necesario, instala barras de apoyo en baño y zonas de paso.",
+          "checklist": [
+            "Mantén pasillos despejados y bien iluminados",
+            "Usa alfombras antideslizantes",
+            "Apóyate en barandas o bastón si lo necesitas"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Prevención de caídas en casa",
+              "url": "https://www.youtube.com/watch?v=Im8p4kG4F6Y"
+            },
+            {
+              "type": "link",
+              "title": "Consejos para un hogar seguro",
+              "url": "https://www.who.int/news-room/fact-sheets/detail/falls"
+            }
+          ]
+        },
+        {
+          "id": "caidas-movilidad",
+          "title": "Movilidad segura",
+          "summary": "Cómo moverte con confianza y sin riesgos.",
+          "image": "assets/topic-edu.svg",
+          "text": "Levántate lentamente desde la cama o silla para evitar mareos. Usa apoyo si te sientes inseguro y realiza ejercicios suaves de equilibrio indicados por tu equipo de salud.",
+          "checklist": [
+            "Levántate en dos tiempos: siéntate y luego ponte de pie",
+            "Usa apoyo al caminar en superficies irregulares",
+            "Realiza ejercicios suaves de equilibrio"
+          ],
+          "resources": [
+            {
+              "type": "video",
+              "title": "Video: Ejercicios de equilibrio",
+              "url": "https://www.youtube.com/watch?v=5Xc14G1iVVI"
+            },
+            {
+              "type": "link",
+              "title": "Movilidad y autocuidado",
+              "url": "https://www.cdc.gov/falls/index.html"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

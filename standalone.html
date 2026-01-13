@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pre-Alta: Educación en Autocuidado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f7fb;
+        --surface: #ffffff;
+        --surface-muted: #eef2f7;
+        --border: #dbe3ee;
+        --text: #1f2937;
+        --muted: #5b6b80;
+        --brand: #1976d2;
+        --accent: #0f9d8a;
+        --shadow: 0 20px 50px rgba(17, 40, 83, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      .app {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 32px 6vw 24px;
+        background: linear-gradient(135deg, #e8f4ff 0%, #f3fbff 35%, #f9fcff 100%);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .brand__dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--brand), var(--accent));
+      }
+
+      .ghost-button {
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px dashed var(--border);
+        background: transparent;
+        color: var(--muted);
+      }
+
+      .hero__content {
+        display: grid;
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 12px;
+        margin: 0 0 8px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(28px, 5vw, 44px);
+      }
+
+      .subtitle {
+        color: var(--muted);
+        margin: 0;
+        max-width: 520px;
+      }
+
+      .hero__card {
+        background: var(--surface);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+      }
+
+      .hero__card-title {
+        font-weight: 600;
+        margin: 0 0 12px;
+      }
+
+      .hero__list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .search {
+        margin-top: 28px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .search__label {
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .search__control {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .search input {
+        flex: 1 1 240px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        font-size: 16px;
+      }
+
+      .clear-button {
+        padding: 10px 16px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface-muted);
+        color: var(--muted);
+        cursor: pointer;
+      }
+
+      .main {
+        flex: 1;
+        padding: 28px 6vw 40px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: clamp(22px, 3vw, 32px);
+      }
+
+      .section-title p {
+        margin: 4px 0 0;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      @media (min-width: 720px) {
+        .hero__content {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-items: center;
+        }
+
+        .grid.pillars {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .grid.pillars {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid.topics {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .card {
+        background: var(--surface);
+        border-radius: 20px;
+        padding: 18px;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-height: 100%;
+      }
+
+      .card__image {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: var(--surface-muted);
+      }
+
+      .card__title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .card__text {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .card__footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .primary-button,
+      .secondary-button {
+        padding: 10px 16px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .primary-button {
+        background: linear-gradient(135deg, var(--brand), #23a8f2);
+        color: white;
+      }
+
+      .secondary-button {
+        background: var(--surface-muted);
+        color: var(--brand);
+        border: 1px solid var(--border);
+      }
+
+      .banner {
+        display: grid;
+        gap: 20px;
+        background: var(--surface);
+        border-radius: 24px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        margin-bottom: 24px;
+      }
+
+      @media (min-width: 900px) {
+        .banner {
+          grid-template-columns: 1.1fr 1fr;
+          align-items: center;
+        }
+      }
+
+      .banner__content h2 {
+        margin-top: 0;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        background: var(--surface-muted);
+        color: var(--muted);
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+
+      .topic-layout {
+        display: grid;
+        gap: 20px;
+      }
+
+      @media (min-width: 900px) {
+        .topic-layout {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .panel {
+        background: var(--surface);
+        border-radius: 18px;
+        padding: 18px;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .panel h3 {
+        margin-top: 0;
+      }
+
+      .checklist {
+        padding-left: 18px;
+        margin: 0;
+        color: var(--muted);
+        display: grid;
+        gap: 8px;
+      }
+
+      .resource-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .resource-card {
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--surface-muted);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .resource-card span {
+        font-weight: 600;
+      }
+
+      .resource-card small {
+        color: var(--muted);
+      }
+
+      .breadcrumbs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+
+      .breadcrumbs button {
+        border: none;
+        background: none;
+        color: var(--brand);
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0;
+      }
+
+      .footer {
+        padding: 20px 6vw 32px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        background: var(--surface);
+      }
+
+      .footer__note {
+        margin-bottom: 0;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .empty-state {
+        padding: 24px;
+        border-radius: 18px;
+        border: 1px dashed var(--border);
+        background: var(--surface);
+        color: var(--muted);
+      }
+
+      .share-message {
+        color: var(--accent);
+        font-weight: 600;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="brand">
+            <span class="brand__dot"></span>
+            <span>Pre-Alta</span>
+          </div>
+          <button class="ghost-button" type="button" disabled>
+            Próximamente: perfiles
+          </button>
+        </nav>
+        <div class="hero__content">
+          <div>
+            <p class="eyebrow">Educación en autocuidado</p>
+            <h1>Contenido práctico y simple para tu recuperación y control.</h1>
+            <p class="subtitle">
+              Explora los pilares y tópicos más importantes para tu alta médica.
+              Navega por tarjetas visuales y accede a infografías, checklists y
+              recursos en segundos.
+            </p>
+          </div>
+          <div class="hero__card">
+            <p class="hero__card-title">¿Qué necesitas hoy?</p>
+            <ul class="hero__list">
+              <li>Consejos rápidos para autocuidado.</li>
+              <li>Checklist para controles y medicamentos.</li>
+              <li>Videos y enlaces verificados.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="search">
+          <label for="search" class="search__label">Buscar por palabra clave</label>
+          <div class="search__control">
+            <input
+              id="search"
+              type="search"
+              placeholder="Ej: insulina, controles, caídas..."
+              autocomplete="off"
+            />
+            <button id="clear-search" class="clear-button" type="button">
+              Limpiar
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section id="view" class="view" aria-live="polite"></section>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Plataforma educativa pre-alta. Contenido editable, sin autenticación.
+        </p>
+        <p class="footer__note">
+          Si tienes dudas, consulta en tu CESFAM/APS. Ante signos de alarma, acude
+          a urgencias.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      const contentData = {
+        pillars: [
+          {
+            id: 'nutricion',
+            title: 'Nutrición general',
+            description: 'Hábitos simples para alimentarte mejor y apoyar tu recuperación.',
+            image: 'assets/pillar-nutricion.svg',
+            topics: [
+              {
+                id: 'nutricion-plan',
+                title: 'Plan de alimentación diario',
+                summary: 'Organiza tus comidas para mantener energía y estabilidad.',
+                image: 'assets/topic-checklist.svg',
+                text: 'Planificar tus comidas ayuda a evitar ayunos prolongados y mejora la recuperación. Prioriza porciones equilibradas con verduras, proteína y cereales integrales. Evita saltarte tiempos de comida y mantén hidratación constante.',
+                checklist: [
+                  'Incluye 3 comidas principales y 1 a 2 colaciones saludables',
+                  'Prioriza verduras, frutas frescas y proteínas magras',
+                  'Limita azúcares simples y bebidas con alcohol'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Plato saludable en 5 minutos',
+                    url: 'https://www.youtube.com/watch?v=Gmh_xMMJ2Pw'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Guía de porciones saludables',
+                    url: 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet'
+                  }
+                ]
+              },
+              {
+                id: 'nutricion-hidratacion',
+                title: 'Hidratación y señales de alerta',
+                summary: 'Identifica cuánta agua necesitas y cuándo consultar.',
+                image: 'assets/topic-edu.svg',
+                text: 'Mantenerte hidratado favorece la circulación, la energía y la recuperación. Observa el color de tu orina y evita esperar a tener sed. En días calurosos o con actividad física aumenta el consumo de agua.',
+                checklist: [
+                  'Toma agua durante el día, en pequeñas cantidades frecuentes',
+                  'Reduce bebidas azucaradas o con cafeína en exceso',
+                  'Consulta si hay mareos frecuentes o sequedad extrema'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Tips para hidratarte mejor',
+                    url: 'https://www.youtube.com/watch?v=9iMGFqMmUFs'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Recomendaciones de hidratación',
+                    url: 'https://www.unicef.org/parenting/health/importance-hydration'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'aps',
+            title: 'Uso correcto de la red APS',
+            description: 'Aprende cuándo consultar, cómo reforzar tus controles y usar tu CESFAM.',
+            image: 'assets/pillar-aps.svg',
+            topics: [
+              {
+                id: 'aps-controles',
+                title: 'Controles y seguimiento',
+                summary: 'Cómo organizar tus controles y no perder continuidad.',
+                image: 'assets/topic-checklist.svg',
+                text: 'Tu control en APS ayuda a prevenir complicaciones y ajustar tratamientos a tiempo. Agenda tus próximas visitas antes del alta y registra síntomas o dudas para tu equipo de salud.',
+                checklist: [
+                  'Agenda tu control antes del alta si es posible',
+                  'Lleva tu lista de medicamentos y exámenes recientes',
+                  'Anota síntomas o dudas antes de ir'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Cómo prepararte para un control',
+                    url: 'https://www.youtube.com/watch?v=J0YbF7xW9Zg'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Guía breve APS',
+                    url: 'https://www.minsal.cl'
+                  }
+                ]
+              },
+              {
+                id: 'aps-urgencias',
+                title: 'Cuándo acudir a urgencias',
+                summary: 'Identifica señales de alarma y actúa a tiempo.',
+                image: 'assets/topic-video.svg',
+                text: 'Algunos síntomas requieren atención inmediata: dolor intenso, dificultad para respirar o sangrado abundante. Si aparecen, no esperes y acude a urgencias. Para dudas menores, consulta con tu CESFAM o línea de salud.',
+                checklist: [
+                  'Dificultad para respirar o dolor de pecho',
+                  'Fiebre alta persistente o vómitos continuos',
+                  'Sangrado abundante o desmayos'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Señales de alarma',
+                    url: 'https://www.youtube.com/watch?v=qGClHkNn9gQ'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Señales de alerta en casa',
+                    url: 'https://www.who.int/emergencies'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'diabetes',
+            title: 'Diabetes e Insulina',
+            description: 'Guías claras para monitoreo, alimentación y uso seguro de insulina.',
+            image: 'assets/pillar-diabetes.svg',
+            topics: [
+              {
+                id: 'diabetes-monitoreo',
+                title: 'Monitoreo de glicemia',
+                summary: 'Cómo medir, registrar y entender tus resultados.',
+                image: 'assets/topic-edu.svg',
+                text: 'Medir tu glicemia te ayuda a ajustar alimentación y medicamentos. Registra tus resultados en horarios fijos y comparte los datos con tu equipo de salud para un mejor seguimiento.',
+                checklist: [
+                  'Mide glicemia antes de comidas y según indicación médica',
+                  'Registra fecha, hora y valor en una libreta o app',
+                  'Consulta si los valores se mantienen fuera de rango'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Cómo medir glicemia',
+                    url: 'https://www.youtube.com/watch?v=8RUpf5UQ1ms'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Guía básica de diabetes',
+                    url: 'https://www.diabetes.org/diabetes'
+                  }
+                ]
+              },
+              {
+                id: 'diabetes-insulina',
+                title: 'Uso seguro de insulina',
+                summary: 'Técnicas de aplicación y conservación correcta.',
+                image: 'assets/topic-checklist.svg',
+                text: 'La insulina debe almacenarse en frío y aplicarse con técnica adecuada. Revisa siempre la fecha de vencimiento y rota los sitios de inyección para evitar molestias o lesiones en la piel.',
+                checklist: [
+                  'Mantén la insulina refrigerada entre 2°C y 8°C',
+                  'Lávate las manos antes de cada aplicación',
+                  'Rota abdomen, brazos y muslos'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Técnica de aplicación de insulina',
+                    url: 'https://www.youtube.com/watch?v=2L9qgF7I1uU'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Cuidados con la insulina',
+                    url: 'https://www.cdc.gov/diabetes/managing/medications.html'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'anticoagulantes',
+            title: 'Anticoagulantes',
+            description: 'Información clave para un uso seguro y seguimiento correcto.',
+            image: 'assets/pillar-anticoagulantes.svg',
+            topics: [
+              {
+                id: 'anticoagulantes-seguridad',
+                title: 'Seguridad en el uso',
+                summary: 'Cómo tomar anticoagulantes sin riesgos.',
+                image: 'assets/topic-edu.svg',
+                text: 'Los anticoagulantes ayudan a prevenir coágulos, pero requieren controles y vigilancia. Evita automedicarte y consulta ante hematomas frecuentes o sangrados.',
+                checklist: [
+                  'Respeta dosis y horarios indicados',
+                  'Informa a tu equipo si tomas otros medicamentos',
+                  'Consulta si aparecen moretones o sangrados'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Uso seguro de anticoagulantes',
+                    url: 'https://www.youtube.com/watch?v=F1C5bJb5hQ4'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Recomendaciones generales',
+                    url: 'https://www.heart.org/en/health-topics/atrial-fibrillation/what-is-atrial-fibrillation-afib'
+                  }
+                ]
+              },
+              {
+                id: 'anticoagulantes-controles',
+                title: 'Controles y exámenes',
+                summary: 'Qué exámenes pedir y cuándo hacerlo.',
+                image: 'assets/topic-video.svg',
+                text: 'Algunos anticoagulantes requieren exámenes periódicos (como INR). Mantén una agenda clara y lleva tus resultados en cada control para ajustar dosis con seguridad.',
+                checklist: [
+                  'Agenda controles según indicación médica',
+                  'Lleva tus resultados de laboratorio',
+                  'Pregunta por signos de alerta específicos'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Control de INR',
+                    url: 'https://www.youtube.com/watch?v=Y25n3K5rF00'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Guía para pacientes anticoagulados',
+                    url: 'https://www.mayoclinic.org/tests-procedures/prothrombin-time/about/pac-20384661'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'caidas',
+            title: 'Prevención de caídas',
+            description: 'Acciones simples para evitar caídas en casa y al caminar.',
+            image: 'assets/pillar-caidas.svg',
+            topics: [
+              {
+                id: 'caidas-hogar',
+                title: 'Seguridad en el hogar',
+                summary: 'Adapta tu espacio para evitar accidentes.',
+                image: 'assets/topic-checklist.svg',
+                text: 'Retira obstáculos en pasillos, mejora la iluminación y utiliza calzado seguro. Si es necesario, instala barras de apoyo en baño y zonas de paso.',
+                checklist: [
+                  'Mantén pasillos despejados y bien iluminados',
+                  'Usa alfombras antideslizantes',
+                  'Apóyate en barandas o bastón si lo necesitas'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Prevención de caídas en casa',
+                    url: 'https://www.youtube.com/watch?v=Im8p4kG4F6Y'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Consejos para un hogar seguro',
+                    url: 'https://www.who.int/news-room/fact-sheets/detail/falls'
+                  }
+                ]
+              },
+              {
+                id: 'caidas-movilidad',
+                title: 'Movilidad segura',
+                summary: 'Cómo moverte con confianza y sin riesgos.',
+                image: 'assets/topic-edu.svg',
+                text: 'Levántate lentamente desde la cama o silla para evitar mareos. Usa apoyo si te sientes inseguro y realiza ejercicios suaves de equilibrio indicados por tu equipo de salud.',
+                checklist: [
+                  'Levántate en dos tiempos: siéntate y luego ponte de pie',
+                  'Usa apoyo al caminar en superficies irregulares',
+                  'Realiza ejercicios suaves de equilibrio'
+                ],
+                resources: [
+                  {
+                    type: 'video',
+                    title: 'Video: Ejercicios de equilibrio',
+                    url: 'https://www.youtube.com/watch?v=5Xc14G1iVVI'
+                  },
+                  {
+                    type: 'link',
+                    title: 'Movilidad y autocuidado',
+                    url: 'https://www.cdc.gov/falls/index.html'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      };
+
+      const view = document.querySelector('#view');
+      const searchInput = document.querySelector('#search');
+      const clearButton = document.querySelector('#clear-search');
+      let currentQuery = '';
+
+      const normalizeText = (value) => value.toLowerCase();
+
+      const matchesQuery = (text, query) =>
+        normalizeText(text).includes(normalizeText(query));
+
+      const buildPillarCard = (pillar) => `
+        <article class="card">
+          <div class="card__image">
+            <img src="${pillar.image}" alt="${pillar.title}" loading="lazy" />
+          </div>
+          <div>
+            <h3 class="card__title">${pillar.title}</h3>
+            <p class="card__text">${pillar.description}</p>
+          </div>
+          <div class="card__footer">
+            <span class="tag">${pillar.topics.length} tópicos</span>
+            <button class="primary-button" data-route="#/pillar/${pillar.id}">
+              Ver contenidos
+            </button>
+          </div>
+        </article>
+      `;
+
+      const buildTopicCard = (pillar, topic) => `
+        <article class="card">
+          <div class="card__image">
+            <img src="${topic.image}" alt="${topic.title}" loading="lazy" />
+          </div>
+          <div>
+            <h3 class="card__title">${topic.title}</h3>
+            <p class="card__text">${topic.summary}</p>
+          </div>
+          <div class="card__footer">
+            <span class="tag">${pillar.title}</span>
+            <button class="secondary-button" data-route="#/pillar/${pillar.id}/topic/${topic.id}">
+              Abrir
+            </button>
+          </div>
+        </article>
+      `;
+
+      const attachRouteHandlers = () => {
+        document.querySelectorAll('[data-route]').forEach((button) => {
+          button.addEventListener('click', () => {
+            const route = button.getAttribute('data-route');
+            window.location.hash = route;
+          });
+        });
+      };
+
+      const renderHome = () => {
+        const pillars = contentData.pillars;
+        const query = currentQuery.trim();
+        const results = [];
+
+        if (query) {
+          pillars.forEach((pillar) => {
+            if (matchesQuery(pillar.title, query) || matchesQuery(pillar.description, query)) {
+              results.push({ pillar, topic: null });
+            }
+            pillar.topics.forEach((topic) => {
+              if (
+                matchesQuery(topic.title, query) ||
+                matchesQuery(topic.summary, query) ||
+                matchesQuery(topic.text, query)
+              ) {
+                results.push({ pillar, topic });
+              }
+            });
+          });
+        }
+
+        const resultsSection = query
+          ? `
+            <div class="section-title">
+              <div>
+                <h2>Resultados de búsqueda</h2>
+                <p>${results.length} coincidencias para "${query}".</p>
+              </div>
+            </div>
+            <div class="grid topics">
+              ${
+                results.length
+                  ? results
+                      .map(({ pillar, topic }) =>
+                        topic ? buildTopicCard(pillar, topic) : buildPillarCard(pillar)
+                      )
+                      .join('')
+                  : '<div class="empty-state">No encontramos resultados. Prueba con otra palabra.</div>'
+              }
+            </div>
+          `
+          : '';
+
+        view.innerHTML = `
+          ${resultsSection}
+          <div class="section-title">
+            <div>
+              <h2>Pilares principales</h2>
+              <p>Elige un pilar para revisar sus contenidos.</p>
+            </div>
+          </div>
+          <div class="grid pillars">
+            ${pillars.map(buildPillarCard).join('')}
+          </div>
+        `;
+
+        attachRouteHandlers();
+      };
+
+      const renderPillar = (pillarId) => {
+        const pillar = contentData.pillars.find((item) => item.id === pillarId);
+
+        if (!pillar) {
+          view.innerHTML = `<div class="empty-state">No encontramos este pilar.</div>`;
+          return;
+        }
+
+        view.innerHTML = `
+          <div class="breadcrumbs">
+            <button data-route="#/">Inicio</button>
+            <span>·</span>
+            <span>${pillar.title}</span>
+          </div>
+
+          <section class="banner">
+            <div class="banner__content">
+              <h2>${pillar.title}</h2>
+              <p>${pillar.description}</p>
+              <div class="tag-list">
+                ${pillar.topics.map((topic) => `<span class="tag">${topic.title}</span>`).join('')}
+              </div>
+            </div>
+            <div class="card__image">
+              <img src="${pillar.image}" alt="${pillar.title}" loading="lazy" />
+            </div>
+          </section>
+
+          <div class="section-title">
+            <div>
+              <h2>Tópicos disponibles</h2>
+              <p>Haz clic para abrir el detalle.</p>
+            </div>
+            <button class="secondary-button" data-route="#/">Volver al inicio</button>
+          </div>
+
+          <div class="grid topics">
+            ${pillar.topics.map((topic) => buildTopicCard(pillar, topic)).join('')}
+          </div>
+        `;
+
+        attachRouteHandlers();
+      };
+
+      const buildResources = (resources) =>
+        resources
+          .map(
+            (resource) => `
+            <a class="resource-card" href="${resource.url}" target="_blank" rel="noopener noreferrer">
+              <div>
+                <span>${resource.title}</span>
+                <small>${resource.type === 'video' ? 'Video recomendado' : 'Recurso externo'}</small>
+              </div>
+              <span>↗</span>
+            </a>
+          `
+          )
+          .join('');
+
+      const renderTopic = (pillarId, topicId) => {
+        const pillar = contentData.pillars.find((item) => item.id === pillarId);
+        const topic = pillar?.topics.find((item) => item.id === topicId);
+
+        if (!pillar || !topic) {
+          view.innerHTML = `<div class="empty-state">No encontramos este tópico.</div>`;
+          return;
+        }
+
+        view.innerHTML = `
+          <div class="breadcrumbs">
+            <button data-route="#/">Inicio</button>
+            <span>·</span>
+            <button data-route="#/pillar/${pillar.id}">${pillar.title}</button>
+            <span>·</span>
+            <span>${topic.title}</span>
+          </div>
+
+          <section class="banner">
+            <div class="banner__content">
+              <h2>${topic.title}</h2>
+              <p>${topic.summary}</p>
+              <div class="tag-list">
+                <span class="tag">${pillar.title}</span>
+                <span class="tag">Checklist práctico</span>
+                <span class="tag">Recursos multimedia</span>
+              </div>
+            </div>
+            <div class="card__image">
+              <img src="${topic.image}" alt="${topic.title}" loading="lazy" />
+            </div>
+          </section>
+
+          <section class="topic-layout">
+            <article class="panel">
+              <h3>Explicación breve</h3>
+              <p>${topic.text}</p>
+            </article>
+            <article class="panel">
+              <h3>Checklist práctico</h3>
+              <ul class="checklist">
+                ${topic.checklist.map((item) => `<li>${item}</li>`).join('')}
+              </ul>
+            </article>
+            <article class="panel">
+              <h3>Infografía principal</h3>
+              <img src="${topic.image}" alt="${topic.title}" />
+            </article>
+            <article class="panel">
+              <h3>Videos y enlaces</h3>
+              <div class="resource-list">
+                ${buildResources(topic.resources)}
+              </div>
+            </article>
+          </section>
+
+          <section class="panel" style="margin-top: 20px;">
+            <h3>Recomendación final</h3>
+            <p>
+              Si tienes dudas, consulta en tu CESFAM/APS. Si aparecen signos de alarma,
+              acude a urgencias.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <button class="secondary-button" data-route="#/pillar/${pillar.id}">
+                Volver al pilar
+              </button>
+              <button class="secondary-button" data-route="#/">Inicio</button>
+              <button class="primary-button" id="share-topic" type="button">
+                Compartir
+              </button>
+            </div>
+            <div id="share-message" class="share-message" hidden>Enlace copiado ✅</div>
+          </section>
+        `;
+
+        attachRouteHandlers();
+
+        const shareButton = document.querySelector('#share-topic');
+        const shareMessage = document.querySelector('#share-message');
+
+        if (shareButton) {
+          shareButton.addEventListener('click', async () => {
+            await navigator.clipboard.writeText(window.location.href);
+            shareMessage.hidden = false;
+            setTimeout(() => {
+              shareMessage.hidden = true;
+            }, 2000);
+          });
+        }
+      };
+
+      const renderRoute = () => {
+        const hash = window.location.hash || '#/';
+        const segments = hash.replace('#/', '').split('/').filter(Boolean);
+
+        if (segments.length === 0) {
+          renderHome();
+          return;
+        }
+
+        if (segments[0] === 'pillar' && segments.length === 2) {
+          renderPillar(segments[1]);
+          return;
+        }
+
+        if (segments[0] === 'pillar' && segments[2] === 'topic') {
+          renderTopic(segments[1], segments[3]);
+          return;
+        }
+
+        renderHome();
+      };
+
+      const updateQuery = (value) => {
+        currentQuery = value;
+        if (window.location.hash && window.location.hash !== '#/') {
+          window.location.hash = '#/';
+        }
+        renderRoute();
+      };
+
+      searchInput.addEventListener('input', (event) => {
+        updateQuery(event.target.value);
+      });
+
+      clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        updateQuery('');
+      });
+
+      window.addEventListener('hashchange', renderRoute);
+      window.addEventListener('DOMContentLoaded', renderRoute);
+    </script>
+  </body>
+</html>
