@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pre-Alta: Educación en Autocuidado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="brand">
+            <span class="brand__dot"></span>
+            <span>Pre-Alta</span>
+          </div>
+          <button class="ghost-button" type="button" disabled>
+            Próximamente: perfiles
+          </button>
+        </nav>
+        <div class="hero__content">
+          <div>
+            <p class="eyebrow">Educación en autocuidado</p>
+            <h1>Contenido práctico y simple para tu recuperación y control.</h1>
+            <p class="subtitle">
+              Explora los pilares y tópicos más importantes para tu alta médica.
+              Navega por tarjetas visuales y accede a infografías, checklists y
+              recursos en segundos.
+            </p>
+          </div>
+          <div class="hero__card">
+            <p class="hero__card-title">¿Qué necesitas hoy?</p>
+            <ul class="hero__list">
+              <li>Consejos rápidos para autocuidado.</li>
+              <li>Checklist para controles y medicamentos.</li>
+              <li>Videos y enlaces verificados.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="search">
+          <label for="search" class="search__label">Buscar por palabra clave</label>
+          <div class="search__control">
+            <input
+              id="search"
+              type="search"
+              placeholder="Ej: insulina, controles, caídas..."
+              autocomplete="off"
+            />
+            <button id="clear-search" class="clear-button" type="button">
+              Limpiar
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section id="view" class="view" aria-live="polite"></section>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Plataforma educativa pre-alta. Contenido editable, sin autenticación.
+        </p>
+        <p class="footer__note">
+          Si tienes dudas, consulta en tu CESFAM/APS. Ante signos de alarma, acude
+          a urgencias.
+        </p>
+      </footer>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
